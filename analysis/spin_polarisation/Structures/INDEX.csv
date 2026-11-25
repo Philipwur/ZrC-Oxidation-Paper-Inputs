@@ -1,0 +1,28 @@
+name,source,time_ps,step,atoms,O,Zr,C,free_O2,adsorbed_O2,gas_product_atoms,chain_C,longest_chain,md_free_energy_eV,note,event,event_O_poscar_indices,O_O_distance_A,nearest_solid_atom_A,time_from_binding_fs
+O2_isolated,"built, not a frame",,,2,2,0,0,1,0,0,0,0,,"one O2, bond 1.23 A along x, in the cell of 873_1.xyz at t = 0",,,,,
+O2_isolated_r1.15,"built, not a frame",,,2,2,0,0,1,0,0,0,0,,"one O2, bond 1.15 A (optional, O-O potential)",,,,,
+O2_isolated_r1.35,"built, not a frame",,,2,2,0,0,1,0,0,0,0,,"one O2, bond 1.35 A (optional, O-O potential)",,,,,
+O2_isolated_r1.50,"built, not a frame",,,2,2,0,0,1,0,0,0,0,,"one O2, bond 1.50 A (optional, O-O potential)",,,,,
+O2_isolated_r1.70,"built, not a frame",,,2,2,0,0,1,0,0,0,0,,"one O2, bond 1.70 A (optional, O-O potential)",,,,,
+S1_873K_cell1_020ps,873_1.xyz,20.0003,17860,114,19,48,47,0,1,0,0,0,,"snapshot at 20 ps, 873 K",,,,,
+S2_973K_cell2_060ps,973_2.xyz,60.0008,49835,122,32,48,42,1,3,0,6,6,,"snapshot at 60 ps, 973 K",,,,,
+S3_1073K_cell1_100ps,1073_1.xyz,100.0,88761,130,43,48,39,1,4,0,11,4,,"snapshot at 100 ps, 1073 K",,,,,
+S4_1273K_cell1_140ps,1273_1.xyz,140.12,124880,137,50,48,39,2,2,0,12,8,-1206.32902874,"snapshot at the end of the run, 1273 K",,,,,
+C1_1073K_cell1_140ps_chains,1073_1.xyz,140.016,126081,142,57,48,37,0,4,0,16,6,-1259.05080118,"end of the run, longest carbon chain 6 atoms",,,,,
+C2_1273K_cell2_140ps_chains,1273_2.xyz,140.016,127761,143,54,48,41,1,2,0,15,6,-1259.68588355,"end of the run, longest carbon chain 6 atoms",,,,,
+E1_873K_cell1_f1,873_1.xyz,0.356,506,116,20,48,48,10,0,0,0,0,,"O2 on the pristine surface: approach, nearest solid atom 4.5 A",E1,11 12,1.283,4.502,-190.0
+E1_873K_cell1_f2,873_1.xyz,0.4698,664,116,20,48,48,10,0,0,0,0,,"O2 on the pristine surface: approach, nearest solid atom 3.5 A",E1,11 12,1.213,3.501,-76.2
+E1_873K_cell1_f3,873_1.xyz,0.5022,718,116,20,48,48,9,1,0,0,0,,"O2 on the pristine surface: approach, nearest solid atom 3.0 A",E1,11 12,1.352,3.004,-43.8
+E1_873K_cell1_f4,873_1.xyz,0.528,761,116,20,48,48,8,2,0,0,0,,"O2 on the pristine surface: approach, nearest solid atom 2.6 A",E1,11 12,1.357,2.61,-18.0
+E1_873K_cell1_f5,873_1.xyz,0.546,791,116,20,48,48,8,2,0,0,0,,"O2 on the pristine surface: bound, an O within 2.3 A of the surface",E1,11 12,1.228,2.286,0.0
+E1_873K_cell1_f6,873_1.xyz,0.84,1211,116,20,48,48,6,3,0,0,0,,"O2 on the pristine surface: adsorbed molecule, halfway to bond stretching",E1,11 12,1.253,2.012,294.0
+E1_873K_cell1_f7,873_1.xyz,1.1879,1632,116,20,48,48,5,1,0,0,0,,O2 on the pristine surface: O-O stretched above 1.8 A,E1,11 12,1.827,1.457,641.9
+E1_873K_cell1_f8,873_1.xyz,1.2014,1647,116,20,48,48,5,1,0,0,0,,"O2 on the pristine surface: dissociated, O-O above 2.4 A",E1,11 12,2.429,1.335,655.4
+E2_1273K_cell1_f1,1273_1.xyz,124.7822,110363,131,44,48,39,1,1,0,12,8,,"O2 on the oxidised surface: approach, nearest solid atom 4.5 A",E2,43 44,1.314,4.526,-203.8
+E2_1273K_cell1_f2,1273_1.xyz,124.923,110492,131,44,48,39,1,2,0,12,8,,"O2 on the oxidised surface: approach, nearest solid atom 3.5 A",E2,43 44,1.133,3.509,-63.0
+E2_1273K_cell1_f3,1273_1.xyz,124.958,110527,131,44,48,39,0,2,0,12,8,,"O2 on the oxidised surface: approach, nearest solid atom 3.0 A",E2,43 44,1.659,3.001,-28.0
+E2_1273K_cell1_f4,1273_1.xyz,124.978,110547,131,44,48,39,0,2,0,12,8,,"O2 on the oxidised surface: approach, nearest solid atom 2.6 A",E2,43 44,1.335,2.603,-8.0
+E2_1273K_cell1_f5,1273_1.xyz,124.986,110555,131,44,48,39,0,2,0,12,8,,"O2 on the oxidised surface: bound, an O within 2.3 A of the surface",E2,43 44,1.699,2.296,0.0
+E2_1273K_cell1_f6,1273_1.xyz,125.0388,110600,131,44,48,39,0,2,0,12,8,,"O2 on the oxidised surface: adsorbed molecule, longest O-O distance (1.95 A)",E2,43 44,1.951,1.926,52.8
+E2_1273K_cell1_f7,1273_1.xyz,125.2371,110768,131,44,48,39,0,3,0,12,8,,"O2 on the oxidised surface: adsorbed molecule, 0.25 ps after binding",E2,43 44,1.286,1.953,251.1
+E2_1273K_cell1_f8,1273_1.xyz,125.986,111356,131,44,48,39,0,3,0,12,8,,"O2 on the oxidised surface: adsorbed molecule, 1 ps after binding",E2,43 44,1.406,1.986,1000.0

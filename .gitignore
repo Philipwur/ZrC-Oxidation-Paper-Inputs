@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+
+# trajectories and logs, if kept inside the repository folder
+analysis/data/
+
+# results written by the scripts
+analysis/**/*Results/*
+# ... except the results of the static VASP calculations, which are part of the repository
+!analysis/spin_polarisation/Results/results.json
+!analysis/convergence/Results/results.json
+analysis/core/Refresh140/
+analysis/core/GasSupplyAudit/
+analysis/core/phiTimeseries/
+analysis/core/Window10Rerun/
+analysis/core/BoundaryConventions/
+analysis/gas_exchange/method_figure/MethodFrame.*
+analysis/gas_exchange/method_figure/Panel_Method.png
+analysis/gas_exchange/method_figure/Fig_Method.*

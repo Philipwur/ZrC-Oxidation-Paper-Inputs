@@ -1,0 +1,123 @@
+poscar_index,element,trajectory_index,group,initial_moment
+1,O,1,O bound,0.0
+2,O,2,O bound,0.0
+3,O,3,O bound,0.0
+4,O,4,O bound,0.0
+5,O,5,O bound,0.0
+6,O,6,O bound,0.0
+7,O,7,O bound,0.0
+8,O,8,O bound,0.0
+9,O,9,O bound,0.0
+10,O,10,O bound,0.0
+11,O,11,O bound,0.0
+12,O,12,O bound,0.0
+13,O,13,O bound,0.0
+14,O,14,O bound,0.0
+15,O,15,O bound,0.0
+16,O,16,O bound,0.0
+17,O,17,O bound,0.0
+18,O,18,O bound,0.0
+19,O,19,O bound,0.0
+20,O,20,O bound,0.0
+21,O,21,O bound,0.0
+22,O,22,O bound,0.0
+23,O,23,O adsorbed O2,1.0
+24,O,24,O adsorbed O2,1.0
+25,O,25,O bound,0.0
+26,O,26,O bound,0.0
+27,O,27,O adsorbed O2,1.0
+28,O,28,O adsorbed O2,1.0
+29,O,29,O adsorbed O2,1.0
+30,O,30,O adsorbed O2,1.0
+31,O,31,O free O2,1.0
+32,O,32,O free O2,1.0
+33,Zr,33,Zr,0.0
+34,Zr,34,Zr,0.0
+35,Zr,35,Zr,0.0
+36,Zr,36,Zr,0.0
+37,Zr,37,Zr,0.0
+38,Zr,38,Zr,0.0
+39,Zr,39,Zr,0.0
+40,Zr,40,Zr,0.0
+41,Zr,41,Zr,0.0
+42,Zr,42,Zr,0.0
+43,Zr,43,Zr,0.0
+44,Zr,44,Zr,0.0
+45,Zr,45,Zr,0.0
+46,Zr,46,Zr,0.0
+47,Zr,47,Zr,0.0
+48,Zr,48,Zr,0.0
+49,Zr,49,Zr,0.0
+50,Zr,50,Zr,0.0
+51,Zr,51,Zr,0.0
+52,Zr,52,Zr,0.0
+53,Zr,53,Zr,0.0
+54,Zr,54,Zr,0.0
+55,Zr,55,Zr,0.0
+56,Zr,56,Zr,0.0
+57,Zr,57,Zr,0.0
+58,Zr,58,Zr,0.0
+59,Zr,59,Zr,0.0
+60,Zr,60,Zr,0.0
+61,Zr,61,Zr,0.0
+62,Zr,62,Zr,0.0
+63,Zr,63,Zr,0.0
+64,Zr,64,Zr,0.0
+65,Zr,65,Zr,0.0
+66,Zr,66,Zr,0.0
+67,Zr,67,Zr,0.0
+68,Zr,68,Zr,0.0
+69,Zr,69,Zr,0.0
+70,Zr,70,Zr,0.0
+71,Zr,71,Zr,0.0
+72,Zr,72,Zr,0.0
+73,Zr,73,Zr,0.0
+74,Zr,74,Zr,0.0
+75,Zr,75,Zr,0.0
+76,Zr,76,Zr,0.0
+77,Zr,77,Zr,0.0
+78,Zr,78,Zr,0.0
+79,Zr,79,Zr,0.0
+80,Zr,80,Zr,0.0
+81,C,81,C chain,0.5
+82,C,82,C no chain,0.0
+83,C,83,C no chain,0.0
+84,C,84,C no chain,0.0
+85,C,85,C no chain,0.0
+86,C,86,C no chain,0.0
+87,C,87,C no chain,0.0
+88,C,88,C no chain,0.0
+89,C,89,C no chain,0.0
+90,C,90,C no chain,0.0
+91,C,91,C no chain,0.0
+92,C,92,C chain,0.5
+93,C,93,C no chain,0.0
+94,C,94,C no chain,0.0
+95,C,95,C no chain,0.0
+96,C,96,C no chain,0.0
+97,C,97,C no chain,0.0
+98,C,98,C no chain,0.0
+99,C,99,C no chain,0.0
+100,C,100,C no chain,0.0
+101,C,101,C chain,0.5
+102,C,102,C chain,0.5
+103,C,103,C no chain,0.0
+104,C,104,C no chain,0.0
+105,C,105,C no chain,0.0
+106,C,106,C no chain,0.0
+107,C,107,C no chain,0.0
+108,C,108,C no chain,0.0
+109,C,109,C no chain,0.0
+110,C,110,C no chain,0.0
+111,C,111,C chain,0.5
+112,C,112,C no chain,0.0
+113,C,113,C chain,0.5
+114,C,114,C no chain,0.0
+115,C,115,C no chain,0.0
+116,C,116,C no chain,0.0
+117,C,117,C no chain,0.0
+118,C,118,C no chain,0.0
+119,C,119,C no chain,0.0
+120,C,120,C no chain,0.0
+121,C,121,C no chain,0.0
+122,C,122,C no chain,0.0

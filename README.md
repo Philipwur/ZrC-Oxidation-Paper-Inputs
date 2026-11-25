@@ -25,15 +25,17 @@ analysis/    analysis scripts
 
 ### Settings that the workflow sets itself
 
-The `INCAR` is the template given to the workflow. The workflow overwrites these tags for every segment of molecular dynamics.
+The `INCAR` is the template given to SGUSCHI. SGUSCHI sets the tags below itself for every segment of molecular dynamics, whatever the template says. The values of these tags in `inputs/INCAR` are therefore not the ones that were used.
 
 | Tag | Value in the template | Value used |
 |---|---|---|
-| `NSW` | 200000 | 80 steps per segment |
+| `NSW` | 200000 | 80 steps per segment. The gas exchange runs between two segments |
 | `TEBEG`, `TEEND` | 873 | target temperature of the trajectory |
-| `SIGMA` | 0.2064 | thermal energy of the target temperature, 0.075 to 0.110 eV |
-| `POTIM` | 1 | adapted during the run (`adj_potim = 1` in `job.in`) |
+| `SIGMA` | 0.2064 | 8.6e-5 eV/K times the target temperature, 0.075 to 0.110 eV |
+| `SMASS` | 0 | 0 (Nosé thermostat) |
+| `POTIM` | 1 | adapted after every segment so that the electronic loop takes about `tgt_nelm` = 6 steps (`adj_potim = 1` in `job.in`). About 1.1 fs on average over the 16 trajectories |
 | `BMIX` | 0.63 | adapted during the run (`adj_bmix = 1` in `job.in`) |
+| `NBANDS` | not set | chosen by VASP for the first segment and then adjusted by the workflow |
 
 Further settings that are not in the files:
 

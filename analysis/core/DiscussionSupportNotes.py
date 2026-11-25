@@ -265,6 +265,15 @@ NotesPath = os.path.join(ScriptDir, "DiscussionSupportResults", "Notes.json")
 # Panel (b) is deliberately achromatic: colour
 # is reserved for temperature throughout the paper, so the mechanism series
 # are separated by grey level + marker + line style instead.
+# Panel labels sit just above the upper left corner of each panel, outside the frame, as in the
+# other figures. LegendPlace says where the legends go: "below" the panels, "inside" them, or
+# "above" them (lifted by LegendLift to clear the labels).
+LabelX, LabelY = 0.0, 1.02
+LegendPlace = "below"
+LegendLift, FigureTop = 1.09, 0.78       # used for "above"
+LegendDrop, FigureBottom = -0.235, 0.32  # used for "below"
+FigureHeightMm = 78.0
+FlowYLim = (1.6, 22)  # (1.6, 45) gives head room for a legend inside panel (b)
 OColour, GasColour, ChainColour = "0.30", "0.45", "0.60"
 
 
@@ -275,7 +284,7 @@ def MakeMassFlowFigure():
     # CommitmentFits.json is intentionally no longer loaded: panel (b)
     # plots mass FLOWS from PhiTimeseries slopes, not commitment rates.
 
-    Fig, Axes = plt.subplots(1, 2, figsize=(131.2 / 25.4, 70 / 25.4))
+    Fig, Axes = plt.subplots(1, 2, figsize=(131.2 / 25.4, FigureHeightMm / 25.4))
 
     # ---- (a) synthetic mass curves ----------------------------------------
     Ax = Axes[0]
@@ -296,11 +305,22 @@ def MakeMassFlowFigure():
     Ax.set_xlabel("Time (ps)")
     Ax.set_ylabel("Net mass change (amu)")
     Ax.set_yticks([0, 500, 1000, 1500, 2000, 2500])
-    Ax.legend(frameon=False, loc="lower center", ncol=2,
-              bbox_to_anchor=(0.5, 1.0), fontsize=7.5, handlelength=1.0,
-              columnspacing=1.2, handletextpad=0.4)
-    Ax.text(0.95, 0.05, "(a)", transform=Ax.transAxes, ha="right",
-            fontweight="bold")
+    Style = dict(frameon=False, fontsize=7.5, handlelength=1.0,
+                 columnspacing=1.2, handletextpad=0.4)
+
+    def PlaceLegend(Axis, InsideLoc, InsideCols):
+        if LegendPlace == "inside":
+            Axis.legend(loc=InsideLoc, ncol=InsideCols, labelspacing=0.3, **Style)
+        elif LegendPlace == "above":
+            Axis.legend(loc="lower center", ncol=2,
+                        bbox_to_anchor=(0.5, LegendLift), **Style)
+        else:
+            Axis.legend(loc="upper center", ncol=2,
+                        bbox_to_anchor=(0.5, LegendDrop), **Style)
+
+    PlaceLegend(Ax, "lower right", 2)
+    Ax.text(LabelX, LabelY, "(a)", transform=Ax.transAxes, ha="left",
+            va="bottom", fontweight="bold")
 
     # ---- (b) the mass flows, Arrhenius view --------------------------------
     # The balance sees exactly two flows: O uptake (+16 u) and gas C loss
@@ -344,7 +364,7 @@ def MakeMassFlowFigure():
             label="C to gas ($-12$ amu)", zorder=3)
     Ax.plot(InvT, CFlow, ":", lw=1.1, color=GasColour, zorder=2)
     Ax.set_yscale("log")
-    Ax.set_ylim(1.6, 22)
+    Ax.set_ylim(*FlowYLim)
     Ax.set_yticks([2, 5, 10, 20])
     Ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda V, _: f"{V:g}"))
     Ax.yaxis.set_minor_formatter(plt.NullFormatter())
@@ -352,16 +372,15 @@ def MakeMassFlowFigure():
     Ax.set_xlabel(r"$1000/T$ (K$^{-1}$)")
     Ax.set_ylabel(r"Mass flow (amu ps$^{-1}$)")
     KB = 8.617333e-5
-    Resid = np.log(Net) - (A + B / np.array(Temperatures, float))
-    R2 = 1 - np.var(Resid) / np.var(np.log(Net))
-    Ax.legend(frameon=False, loc="lower center", ncol=2,
-              bbox_to_anchor=(0.5, 1.0), fontsize=7.5, handlelength=1.0,
-              columnspacing=1.2, handletextpad=0.4)
-    Ax.text(0.95, 0.05, "(b)", transform=Ax.transAxes, ha="right",
-            fontweight="bold")
+    PlaceLegend(Ax, "upper right", 1)
+    Ax.text(LabelX, LabelY, "(b)", transform=Ax.transAxes, ha="left",
+            va="bottom", fontweight="bold")
 
     Fig.tight_layout(pad=0.4)
-    Fig.subplots_adjust(top=0.84)
+    if LegendPlace == "above":
+        Fig.subplots_adjust(top=FigureTop)
+    elif LegendPlace == "below":
+        Fig.subplots_adjust(bottom=FigureBottom)
     # Fit label along the fitted line, placed after layout so the angle
     # computed in display space is exact.
     Ax = Axes[1]
@@ -370,7 +389,7 @@ def MakeMassFlowFigure():
     P2 = Ax.transData.transform((1000.0 / 873.0, np.exp(A + B / 873.0)))
     Angle = np.degrees(np.arctan2(P2[1] - P1[1], P2[0] - P1[0]))
     Ax.text(1000.0 * XMid, np.exp(A + B * XMid) * 0.82,
-            f"$E_\\mathrm{{a}} = {-B*KB:.2f}$ eV, $R^2 = {R2:.3f}$",
+            f"$E_\\mathrm{{a}} = {-B*KB:.2f}$ eV",
             fontsize=7.5, ha="center", va="top", rotation=Angle,
             rotation_mode="anchor", color="0.15")
     Fig.savefig(os.path.join(ResultsDir, "Fig_ConvolutionDemo.png"), dpi=300)

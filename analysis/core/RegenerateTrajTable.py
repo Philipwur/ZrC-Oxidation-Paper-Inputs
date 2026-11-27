@@ -1,8 +1,8 @@
 """
 RegenerateTrajTable.py
 =======================================================================
-Regenerates Supplementary Table S1 (per-trajectory raw kinetic outputs)
-from the audited sources.
+Regenerates the per-trajectory table of the Supplementary Information
+(raw kinetic outputs) from the audited sources.
 
 Columns and sources:
   CO Des / CO2 Des : EventTableV2.csv (audited, artifact-corrected,
